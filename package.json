@@ -1,0 +1,27 @@
+{
+  "name": "@busymango/is-esm",
+  "version": "0.0.3",
+  "type": "module",
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "types": "./index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    "types": "./index.d.ts",
+    "import": "./dist/index.js",
+    "require": "./dist/index.umd.cjs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preversion": "pnpm run build"
+  },
+  "devDependencies": {
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "vite": "^4.0.4"
+  }
+}
