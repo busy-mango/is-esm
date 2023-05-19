@@ -1,6 +1,6 @@
 /**
  * @author mango
- *
+ * @description type check
  */
 /** null or undefined */
 export type Nil = null | undefined;
@@ -27,9 +27,40 @@ export declare function isFunction(source: unknown): source is Function;
  */
 export declare function isObject(source: unknown): source is object;
 /**
- * Checks if `value.constructor` is the `Object`
+ * Checks if `value` is the `CSSStyleRule`.
  */
-export declare function isPureObject(source: unknown): source is Exclude<object, ArrayBuffer | ArrayBufferView | Blob | Date | FormData | ReadableStream>;
+export declare function isCSSStyleRule(source: unknown): source is CSSStyleRule;
+/**
+ * Checks if `value` is the `CSSStyleSheet`.
+ */
+export declare function isCSSStyleSheet(source: unknown): source is CSSStyleSheet;
+/**
+ * Checks keyname is vaild object attr & val type is check func
+ * @example ```typescript
+ * const obj = { key: '' };
+ * if (isValidKey('key', obj, isString)) {
+ *  // obj.key will be autoComplete by TS
+ *  obj.key.trim();
+ * }
+ * ```
+ */
+export declare function isValidKey<K extends string, T>(key: K, obj: object, check: (val: unknown) => val is T): obj is Record<K, T>;
+/**
+ * Check source is URLSearchParams
+ */
+export declare function isURLSearchParams(source: unknown): source is URLSearchParams;
+/**
+ * Check source is ArrayBuffer
+ */
+export declare function isArrayBuffer(source: unknown): source is ArrayBuffer;
+/**
+ * Check source is ArrayBufferLike
+ */
+export declare function isArrayBufferLike(source: unknown): source is ArrayBufferLike;
+/**
+ * Check source is ArrayBufferView
+ */
+export declare function isArrayBufferView(source: unknown): source is ArrayBufferView;
 /**
  * Checks if `value` is classified as a `Number` primitive or object.
  * @note ** To exclude `Infinity`, `-Infinity`, and `NaN`, which are

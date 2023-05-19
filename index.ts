@@ -1,6 +1,6 @@
 /**
  * @author mango
- * 
+ * @description type check
  */
 
 /** null or undefined */
@@ -46,19 +46,68 @@ export function isObject(source: unknown): source is object {
 }
 
 /**
- * Checks if `value.constructor` is the `Object`
+ * Checks if `value` is the `CSSStyleRule`.
  */
-export function isPureObject (source: unknown): source is Exclude<
-  object,
-  | ArrayBuffer
-  | ArrayBufferView
-  | Blob
-  | Date
-  | FormData
-  | ReadableStream
-> {
-  if (!isObject(source)) return false;
-  return source.constructor === Object;
+export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
+  return source instanceof CSSStyleRule;
+}
+
+/**
+ * Checks if `value` is the `CSSStyleSheet`.
+ */
+export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
+  return source instanceof CSSStyleSheet;
+}
+
+/**
+ * Checks keyname is vaild object attr & val type is check func
+ * @example ```typescript
+ * const obj = { key: '' };
+ * if (isValidKey('key', obj, isString)) {
+ *  // obj.key will be autoComplete by TS
+ *  obj.key.trim();
+ * }
+ * ```
+ */
+export function isValidKey<K extends string, T>(
+  key: K,
+  obj: object,
+  check: (val: unknown) => val is T,
+): obj is Record<K, T> {
+  return (key in obj) && check((obj as Record<K, T>)[key]);
+}
+
+/**
+ * Check source is URLSearchParams
+ */
+export function isURLSearchParams(source: unknown): source is URLSearchParams {
+  return source instanceof URLSearchParams;
+}
+
+/**
+ * Check source is ArrayBuffer
+ */
+export function isArrayBuffer(source: unknown): source is ArrayBuffer {
+  return source instanceof ArrayBuffer;
+}
+
+/**
+ * Check source is ArrayBufferLike
+ */
+export function isArrayBufferLike(source: unknown): source is ArrayBufferLike {
+  return isObject(source)
+    && isValidKey('ArrayBuffer', source, isArrayBuffer);
+};
+
+/**
+ * Check source is ArrayBufferView
+ */
+export function isArrayBufferView(source: unknown): source is ArrayBufferView {
+  return isObject(source)
+    && isValidKey('byteLength', source, isNumeric)
+    && isValidKey('byteOffset', source, isNumeric)
+    && isValidKey('buffer', source, isArrayBufferLike)
+  ;
 }
 
 /**
