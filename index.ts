@@ -10,7 +10,7 @@ export type Nil = null | undefined;
  * Checks if `value` is `null` or `undefined`.
  */
 export function isNil(source: unknown): source is Nil {
-  return source == null
+  return source == null;
 }
 
 /**
@@ -46,17 +46,27 @@ export function isObject(source: unknown): source is object {
 }
 
 /**
- * Checks if `value` is the `CSSStyleRule`.
+ * Checks if `value` is classified as a `Number` primitive or object.
+ * @note ** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
+ * classified as numbers, use the `Number.isFinite` method.
  */
-export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
-  return source instanceof CSSStyleRule;
+export function isNumber(source: unknown): source is number {
+  return typeof source === 'number' || source instanceof Number;
 }
 
 /**
- * Checks if `value` is the `CSSStyleSheet`.
+ * Checks if `value` is finite numerical
+ * @note `Infinity`, `-Infinity`, `NaN` is not vaild numerical
  */
-export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
-  return source instanceof CSSStyleSheet;
+export function isNumeric(source: unknown): source is number {
+  return Number.isFinite(source);
+}
+
+/**
+ * Checks if `value` is array
+ */
+export function isArray(source: unknown): source is unknown[] {
+  return Array.isArray(source);
 }
 
 /**
@@ -75,6 +85,20 @@ export function isValidKey<K extends string, T>(
   check: (val: unknown) => val is T,
 ): obj is Record<K, T> {
   return (key in obj) && check((obj as Record<K, T>)[key]);
+}
+
+/**
+ * Checks if `value` is the `CSSStyleRule`.
+ */
+export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
+  return source instanceof CSSStyleRule;
+}
+
+/**
+ * Checks if `value` is the `CSSStyleSheet`.
+ */
+export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
+  return source instanceof CSSStyleSheet;
 }
 
 /**
@@ -108,23 +132,6 @@ export function isArrayBufferView(source: unknown): source is ArrayBufferView {
     && isValidKey('byteOffset', source, isNumeric)
     && isValidKey('buffer', source, isArrayBufferLike)
   ;
-}
-
-/**
- * Checks if `value` is classified as a `Number` primitive or object.
- * @note ** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
- * classified as numbers, use the `Number.isFinite` method.
- */
-export function isNumber(source: unknown): source is number {
-  return typeof source === 'number' || source instanceof Number;
-}
-
-/**
- * Checks if `value` is finite numerical
- * @note `Infinity`, `-Infinity`, `NaN` is not vaild numerical
- */
-export function isNumeric(source: unknown): source is number {
-  return Number.isFinite(source);
 }
 
 /**

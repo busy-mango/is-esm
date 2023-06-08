@@ -27,13 +27,20 @@ export declare function isFunction(source: unknown): source is Function;
  */
 export declare function isObject(source: unknown): source is object;
 /**
- * Checks if `value` is the `CSSStyleRule`.
+ * Checks if `value` is classified as a `Number` primitive or object.
+ * @note ** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
+ * classified as numbers, use the `Number.isFinite` method.
  */
-export declare function isCSSStyleRule(source: unknown): source is CSSStyleRule;
+export declare function isNumber(source: unknown): source is number;
 /**
- * Checks if `value` is the `CSSStyleSheet`.
+ * Checks if `value` is finite numerical
+ * @note `Infinity`, `-Infinity`, `NaN` is not vaild numerical
  */
-export declare function isCSSStyleSheet(source: unknown): source is CSSStyleSheet;
+export declare function isNumeric(source: unknown): source is number;
+/**
+ * Checks if `value` is array
+ */
+export declare function isArray(source: unknown): source is unknown[];
 /**
  * Checks keyname is vaild object attr & val type is check func
  * @example ```typescript
@@ -45,6 +52,14 @@ export declare function isCSSStyleSheet(source: unknown): source is CSSStyleShee
  * ```
  */
 export declare function isValidKey<K extends string, T>(key: K, obj: object, check: (val: unknown) => val is T): obj is Record<K, T>;
+/**
+ * Checks if `value` is the `CSSStyleRule`.
+ */
+export declare function isCSSStyleRule(source: unknown): source is CSSStyleRule;
+/**
+ * Checks if `value` is the `CSSStyleSheet`.
+ */
+export declare function isCSSStyleSheet(source: unknown): source is CSSStyleSheet;
 /**
  * Check source is URLSearchParams
  */
@@ -61,17 +76,6 @@ export declare function isArrayBufferLike(source: unknown): source is ArrayBuffe
  * Check source is ArrayBufferView
  */
 export declare function isArrayBufferView(source: unknown): source is ArrayBufferView;
-/**
- * Checks if `value` is classified as a `Number` primitive or object.
- * @note ** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
- * classified as numbers, use the `Number.isFinite` method.
- */
-export declare function isNumber(source: unknown): source is number;
-/**
- * Checks if `value` is finite numerical
- * @note `Infinity`, `-Infinity`, `NaN` is not vaild numerical
- */
-export declare function isNumeric(source: unknown): source is number;
 /**
  * Checks if `value` is HTMLElement
  */
