@@ -7,6 +7,6 @@ export default defineConfig({
       entry: 'index.ts',
       fileName: 'index',
       name: '@busymango/is-esm',
-    }
-  }
-})
+    },
+  },
+});
