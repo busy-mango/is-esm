@@ -1,6 +1,6 @@
 {
   "name": "@busymango/is-esm",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "type narrowing for typescript",
   "type": "module",
   "files": [
@@ -18,7 +18,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preversion": "pnpm run build"
+    "preversion": "pnpm run build",
+    "test": "vitest"
   },
   "devDependencies": {
     "tslib": "^2.5.0",
