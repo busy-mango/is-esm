@@ -41,6 +41,13 @@ export function isHTMLElement(source: unknown): source is HTMLElement {
 }
 
 /**
+ * Narrow source type to `Blob`.
+ */
+export function isBlob(source: unknown): source is Blob {
+  return source instanceof Blob;
+}
+
+/**
  * Narrow source type to `File`.
  */
 export function isFile(source: unknown): source is File {

@@ -57,3 +57,10 @@ export function isFalse(source: unknown): source is true {
 export function isBoolean(source: unknown): source is Boolean {
   return isTrue(source) || isFalse(source);
 }
+
+/**
+ * Narrow source type to `Boolean`.
+ */
+export function isBigInt(source: unknown): source is bigint {
+  return typeof source === 'bigint';
+}

@@ -8,5 +8,10 @@ export default defineConfig({
       fileName: 'index',
       name: '@busymango/is-esm',
     },
+    rollupOptions: {
+      output: {
+        name: 'isEsm',
+      }
+    }
   },
 });

@@ -39,3 +39,10 @@ export function isArrayBufferView(source: unknown): source is ArrayBufferView {
     && isValidKey('buffer', source, isArrayBufferLike)
   ;
 }
+
+/**
+ * Narrow source type to `IArguments`.
+ */
+export function isArguments(source: unknown): source is typeof arguments {
+  return isObject(source) && source.toString() === '[object Arguments]';
+}

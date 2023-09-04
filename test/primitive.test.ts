@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { isUndefined, isNull, isNil } from '../src/primitive';
+import { isUndefined, isNull, isNil, isString } from '../src/primitive';
 
 describe('isUndefined', () => {
   it('responsibility', () => {
@@ -60,6 +60,28 @@ describe('isNil', () => {
       -1,
       {},
       [],
+    ].forEach((source) => {
+      expect(isNil(source)).toBe(false);
+    });
+  });
+});
+
+describe('isString', () => {
+  it('responsibility', () => {
+    const source1 = 'null';
+    const source2 = new String(undefined);
+    const source3 = (33).toString();
+    expect(isString(source1)).toBe(true);
+    expect(isString(source2)).toBe(true);
+    expect(isString(source3)).toBe(true);
+  });
+  it('boundary', () => {
+    [
+      13,
+      new Date(),
+      {},
+      [],
+      true,
     ].forEach((source) => {
       expect(isNil(source)).toBe(false);
     });
