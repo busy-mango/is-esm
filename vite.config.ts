@@ -10,7 +10,7 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        name: 'is',
+        name: '@busymango/is-esm',
       }
     }
   },

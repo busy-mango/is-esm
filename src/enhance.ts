@@ -6,38 +6,10 @@ export function isPromise<T, S>(source: Promise<T> | S): source is Promise<T> {
 }
 
 /**
- * Narrow source type to `CSSStyleRule`.
- */
-export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
-  return source instanceof CSSStyleRule;
-}
-
-/**
- * Narrow source type to `CSSStyleSheet`.
- */
-export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
-  return source instanceof CSSStyleSheet;
-}
-
-/**
  * Narrow source type to `URLSearchParams`.
  */
 export function isURLSearchParams(source: unknown): source is URLSearchParams {
   return source instanceof URLSearchParams;
-}
-
-/**
- * Narrow source type to `HTMLElement`.
- */
-export function isElement(source: unknown): source is Element {
-  return source instanceof Element;
-}
-
-/**
- * Narrow source type to `HTMLElement`.
- */
-export function isHTMLElement(source: unknown): source is HTMLElement {
-  return source instanceof HTMLElement;
 }
 
 /**
@@ -80,4 +52,11 @@ export function isRegExp(source: unknown): source is RegExp {
  */
 export function isError(source: unknown): source is Error {
   return source instanceof Error;
+}
+
+/**
+ * Narrow source type to `Uint8Array`.
+ */
+export function isUint8Array(source: unknown): source is Uint8Array {
+  return source instanceof Uint8Array;
 }

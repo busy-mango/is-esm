@@ -1,4 +1,4 @@
-import { isArrayBuffer } from "./enhance";
+import { isArrayBuffer, isUint8Array } from "./enhance";
 import { isNumeric } from "./primitive.pro";
 import { isObject } from "./reference";
 
@@ -26,7 +26,11 @@ export function isValidKey<K extends string, T>(
  * Narrow source type to `isArrayBufferLike`.
  */
 export function isArrayBufferLike(source: unknown): source is ArrayBufferLike {
-  return isObject(source) && isValidKey('ArrayBuffer', source, isArrayBuffer);
+  return (
+    isArrayBuffer(source)
+    || isUint8Array(source)
+    || isObject(source) && isValidKey('ArrayBuffer', source, isArrayBuffer)
+  );
 };
 
 /**
