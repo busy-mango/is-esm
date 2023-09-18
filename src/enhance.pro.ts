@@ -1,9 +1,10 @@
 import { isArrayBuffer, isUint8Array } from "./enhance";
-import { isNumeric } from "./primitive.pro";
+import { isFinite } from "./primitive.pro";
 import { isObject } from "./reference";
 
 export interface NarrowFunc<T> {
   (source: unknown): source is T;
+  (source: unknown): boolean;
 }
 
 /**
@@ -38,8 +39,8 @@ export function isArrayBufferLike(source: unknown): source is ArrayBufferLike {
  */
 export function isArrayBufferView(source: unknown): source is ArrayBufferView {
   return isObject(source)
-    && isValidKey('byteLength', source, isNumeric)
-    && isValidKey('byteOffset', source, isNumeric)
+    && isValidKey('byteLength', source, isFinite)
+    && isValidKey('byteOffset', source, isFinite)
     && isValidKey('buffer', source, isArrayBufferLike)
   ;
 }

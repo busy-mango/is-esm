@@ -6,7 +6,10 @@ export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
 }
 
 /**
- * Narrow source type to `CSSStyleSheet`.
+ * Checks if the given source is an instance of CSSStyleSheet.
+ * If is CSSStyleSheet, narrow to CSSStyleSheet.
+ * @param {unknown} source - The value to be checked.
+ * @returns {boolean} Returns true if the source is an instance of CSSStyleSheet, false otherwise.
  */
 export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
   return source instanceof CSSStyleSheet;

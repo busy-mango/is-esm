@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   isNaN,
-  isNumeric,
+  isFinite,
   isInteger,
   isSafeInteger,
   isNonEmptyString,
@@ -43,19 +43,19 @@ describe('isNaN', () => {
 
 describe('isNumeric', () => {
   it('should return true if source is a numeric value', () => {
-    expect(isNumeric(123)).toBe(true);
-    expect(isNumeric(0)).toBe(true);
-    expect(isNumeric(-1.5)).toBe(true);
+    expect(isFinite(123)).toBe(true);
+    expect(isFinite(0)).toBe(true);
+    expect(isFinite(-1.5)).toBe(true);
   });
 
   it('should return false if source is not a numeric value', () => {
-    expect(isNumeric(undefined)).toBe(false);
-    expect(isNumeric(null)).toBe(false);
-    expect(isNumeric('123')).toBe(false);
-    expect(isNumeric(true)).toBe(false);
-    expect(isNumeric(NaN)).toBe(false);
-    expect(isNumeric(Infinity)).toBe(false);
-    expect(isNumeric(-Infinity)).toBe(false);
+    expect(isFinite(undefined)).toBe(false);
+    expect(isFinite(null)).toBe(false);
+    expect(isFinite('123')).toBe(false);
+    expect(isFinite(true)).toBe(false);
+    expect(isFinite(NaN)).toBe(false);
+    expect(isFinite(Infinity)).toBe(false);
+    expect(isFinite(-Infinity)).toBe(false);
   });
 });
 
