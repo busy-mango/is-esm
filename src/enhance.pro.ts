@@ -3,8 +3,8 @@ import { isFinite } from "./primitive.pro";
 import { isObject } from "./reference";
 
 export interface NarrowFunc<T> {
-  (source: unknown): source is T;
   (source: unknown): boolean;
+  (source: unknown): source is T;
 }
 
 /**
