@@ -2,6 +2,7 @@ import { isArrayBuffer, isUint8Array } from "./enhance";
 import { isFinite } from "./primitive.pro";
 import { isObject } from "./reference";
 
+/** Type narrow func define */
 export interface NarrowFunc<T> {
   (source: unknown): boolean;
   (source: unknown): source is T;
