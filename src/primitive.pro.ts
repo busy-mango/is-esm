@@ -1,4 +1,4 @@
-import { isString } from "./primitive";
+import { isNumber, isString } from "./primitive";
 
 /**
  * Narrow source type to `String` && Check is not empty string.
@@ -8,10 +8,10 @@ export function isNonEmptyString(source: unknown): source is Exclude<string, ''>
 }
 
 /**
- * 
+ * Check source is `NaN` and narrow type to `number`;
  */
-export function isNaN(source: unknown): boolean {
-  return Number.isNaN(source);
+export function isNaN(source: unknown): source is number {
+  return isNumber(source) && Number.isNaN(source);
 }
 
 /**
