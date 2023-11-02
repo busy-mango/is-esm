@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   isUndefined,
+  isNotUndefined,
   isNull,
   isNil,
   isString,
@@ -26,6 +27,17 @@ describe('isUndefined', () => {
     expect(isUndefined({})).toBe(false);
     expect(isUndefined([])).toBe(false);
     expect(isUndefined(-2)).toBe(false);
+  });
+});
+
+describe('isNotUndefined', () => {
+  it('should return true if the source is not undefined', () => {
+    const source: string | undefined = 'example';
+    expect(isNotUndefined(source)).toBeTruthy();
+  });
+
+  it('should return false if the source is undefined', () => {
+    expect(isNotUndefined(undefined)).toBeFalsy();
   });
 });
 

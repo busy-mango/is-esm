@@ -9,6 +9,13 @@ export function isUndefined(source: unknown): source is undefined {
 }
 
 /**
+ * Narrow source type is not `nundefined`.
+ */
+export function isNotUndefined<T>(source: undefined | T): source is T {
+  return source !== undefined;
+}
+
+/**
  * Narrow source type to `null`.
  */
 export function isNull(source: unknown): source is null {
