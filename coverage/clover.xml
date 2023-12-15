@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698911175896" clover="3.2.0">
-  <project timestamp="1698911175896" name="All files">
-    <metrics statements="340" coveredstatements="336" conditionals="53" coveredconditionals="53" methods="37" coveredmethods="35" elements="430" coveredelements="424" complexity="0" loc="340" ncloc="340" packages="2" files="8" classes="8"/>
+<coverage generated="1702652473919" clover="3.2.0">
+  <project timestamp="1702652473920" name="All files">
+    <metrics statements="347" coveredstatements="341" conditionals="53" coveredconditionals="53" methods="38" coveredmethods="35" elements="438" coveredelements="429" complexity="0" loc="347" ncloc="347" packages="2" files="8" classes="8"/>
     <package name="is-esm">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="index.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/index.ts">
+      <file name="index.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/index.ts">
         <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -22,8 +22,8 @@
       </file>
     </package>
     <package name="is-esm.src">
-      <metrics statements="327" coveredstatements="323" conditionals="53" coveredconditionals="53" methods="37" coveredmethods="35"/>
-      <file name="dom.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/dom.ts">
+      <metrics statements="334" coveredstatements="328" conditionals="53" coveredconditionals="53" methods="38" coveredmethods="35"/>
+      <file name="dom.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/dom.ts">
         <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -56,7 +56,7 @@
         <line num="29" count="7" type="stmt"/>
         <line num="30" count="7" type="stmt"/>
       </file>
-      <file name="enhance.pro.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/enhance.pro.ts">
+      <file name="enhance.pro.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/enhance.pro.ts">
         <metrics statements="54" coveredstatements="54" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -113,7 +113,7 @@
         <line num="53" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="54" count="7" type="stmt"/>
       </file>
-      <file name="enhance.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/enhance.ts">
+      <file name="enhance.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/enhance.ts">
         <metrics statements="102" coveredstatements="98" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -218,7 +218,7 @@
         <line num="101" count="0" type="stmt"/>
         <line num="102" count="0" type="stmt"/>
       </file>
-      <file name="primitive.pro.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/primitive.pro.ts">
+      <file name="primitive.pro.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/primitive.pro.ts">
         <metrics statements="36" coveredstatements="36" conditionals="7" coveredconditionals="7" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -257,7 +257,7 @@
         <line num="35" count="12" type="stmt"/>
         <line num="36" count="12" type="stmt"/>
       </file>
-      <file name="primitive.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/primitive.ts">
+      <file name="primitive.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/primitive.ts">
         <metrics statements="73" coveredstatements="73" conditionals="14" coveredconditionals="14" methods="10" coveredmethods="10"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -333,18 +333,25 @@
         <line num="72" count="8" type="stmt"/>
         <line num="73" count="8" type="stmt"/>
       </file>
-      <file name="reference.pro.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/reference.pro.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="reference.pro.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/reference.pro.ts">
+        <metrics statements="15" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="8" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="8" type="stmt"/>
       </file>
-      <file name="reference.ts" path="/Users/mangosetsuna/Workspace/busymango/is-esm/src/reference.ts">
+      <file name="reference.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/reference.ts">
         <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

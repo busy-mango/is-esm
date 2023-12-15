@@ -61,7 +61,7 @@ export function isFalse(source: unknown): source is true {
 /**
  * Narrow source type to `Boolean`.
  */
-export function isBoolean(source: unknown): source is Boolean {
+export function isBoolean(source: unknown): source is boolean {
   return isTrue(source) || isFalse(source);
 }
 
