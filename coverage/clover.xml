@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1702652473919" clover="3.2.0">
-  <project timestamp="1702652473920" name="All files">
-    <metrics statements="347" coveredstatements="341" conditionals="53" coveredconditionals="53" methods="38" coveredmethods="35" elements="438" coveredelements="429" complexity="0" loc="347" ncloc="347" packages="2" files="8" classes="8"/>
+<coverage generated="1703427328433" clover="3.2.0">
+  <project timestamp="1703427328434" name="All files">
+    <metrics statements="356" coveredstatements="352" conditionals="56" coveredconditionals="56" methods="39" coveredmethods="37" elements="451" coveredelements="445" complexity="0" loc="356" ncloc="356" packages="2" files="8" classes="8"/>
     <package name="is-esm">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/index.ts">
@@ -22,7 +22,7 @@
       </file>
     </package>
     <package name="is-esm.src">
-      <metrics statements="334" coveredstatements="328" conditionals="53" coveredconditionals="53" methods="38" coveredmethods="35"/>
+      <metrics statements="343" coveredstatements="339" conditionals="56" coveredconditionals="56" methods="39" coveredmethods="37"/>
       <file name="dom.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/dom.ts">
         <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
@@ -266,8 +266,8 @@
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="8" count="44" type="stmt"/>
-        <line num="9" count="44" type="stmt"/>
+        <line num="8" count="51" type="stmt"/>
+        <line num="9" count="51" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
@@ -280,15 +280,15 @@
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="22" count="56" type="stmt"/>
-        <line num="23" count="56" type="stmt"/>
+        <line num="22" count="63" type="stmt"/>
+        <line num="23" count="63" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="29" count="40" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="40" type="stmt"/>
+        <line num="29" count="47" type="cond" truecount="1" falsecount="0"/>
+        <line num="30" count="47" type="stmt"/>
         <line num="31" count="1" type="stmt"/>
         <line num="32" count="1" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
@@ -334,22 +334,31 @@
         <line num="73" count="8" type="stmt"/>
       </file>
       <file name="reference.pro.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/reference.pro.ts">
-        <metrics statements="15" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <metrics statements="24" coveredstatements="24" conditionals="5" coveredconditionals="5" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
+        <line num="7" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="10" count="7" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="14" count="8" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="8" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="8" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="8" type="cond" truecount="1" falsecount="0"/>
+        <line num="24" count="8" type="stmt"/>
       </file>
       <file name="reference.ts" path="/Users/mangosetsuna/Workspace/Busymango/is-esm/src/reference.ts">
         <metrics statements="24" coveredstatements="24" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
@@ -359,10 +368,10 @@
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="7" count="38" type="stmt"/>
-        <line num="8" count="38" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="38" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="38" type="stmt"/>
+        <line num="7" count="45" type="stmt"/>
+        <line num="8" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="45" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="45" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
@@ -375,8 +384,8 @@
         <line num="20" count="1" type="stmt"/>
         <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="16" type="stmt"/>
-        <line num="24" count="16" type="stmt"/>
+        <line num="23" count="24" type="stmt"/>
+        <line num="24" count="24" type="stmt"/>
       </file>
     </package>
   </project>
