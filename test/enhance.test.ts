@@ -1,14 +1,20 @@
+/**
+ * @vitest-environment jsdom
+ */
+
 import { describe, expect, it } from "vitest";
 
 import {
   isDate,
   isPromise,
+  isUint8Array,
   isArrayBuffer,
   isURLSearchParams,
   isFile,
   isBlob,
   isError,
   isRegExp,
+  isWeakSet,
 } from '../index';
 
 describe('isPromise', () => {
@@ -60,21 +66,53 @@ describe('isBlob', () => {
   });
 });
 
-// describe('isFile', () => {
-//   it('should return true if source is a File', () => {
-//     const file = new File([], 'filename');
-//     expect(isFile(file)).toBe(true);
-//   });
+describe('isFile', () => {
+  it('should return true if source is a File', () => {
+    const file = new File([], 'filename');
+    expect(isFile(file)).toBe(true);
+  });
 
-//   it('should return false if source is not a File', () => {
-//     expect(isFile(undefined)).toBe(false);
-//     expect(isFile(null)).toBe(false);
-//     expect(isFile(123)).toBe(false);
-//     expect(isFile('file')).toBe(false);
-//     expect(isFile({})).toBe(false);
-//     expect(isFile([])).toBe(false);
-//   });
-// });
+  it('should return false if source is not a File', () => {
+    expect(isFile(undefined)).toBe(false);
+    expect(isFile(null)).toBe(false);
+    expect(isFile(123)).toBe(false);
+    expect(isFile('file')).toBe(false);
+    expect(isFile({})).toBe(false);
+    expect(isFile([])).toBe(false);
+  });
+});
+
+describe('isUint8Array', () => {
+  it('should return true if source is an Uint8Array', () => {
+    const buffer = new Uint8Array(8);
+    expect(isUint8Array(buffer)).toBe(true);
+  });
+
+  it('should return false if source is not an Uint8Array', () => {
+    expect(isUint8Array(undefined)).toBe(false);
+    expect(isUint8Array(null)).toBe(false);
+    expect(isUint8Array(123)).toBe(false);
+    expect(isUint8Array('buffer')).toBe(false);
+    expect(isUint8Array({})).toBe(false);
+    expect(isUint8Array([])).toBe(false);
+  });
+});
+
+describe('isWeakSet', () => {
+  it('should return true if source is an isWeakSet', () => {
+    const buffer = new WeakSet();
+    expect(isWeakSet(buffer)).toBe(true);
+  });
+
+  it('should return false if source is not an isWeakSet', () => {
+    expect(isWeakSet(undefined)).toBe(false);
+    expect(isWeakSet(null)).toBe(false);
+    expect(isWeakSet(123)).toBe(false);
+    expect(isWeakSet('buffer')).toBe(false);
+    expect(isWeakSet({})).toBe(false);
+    expect(isWeakSet([])).toBe(false);
+  });
+});
 
 describe('isArrayBuffer', () => {
   it('should return true if source is an ArrayBuffer', () => {
