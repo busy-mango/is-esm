@@ -1,6 +1,6 @@
 {
   "name": "@busymango/is-esm",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "type narrowing for typescript",
   "type": "module",
   "files": [
@@ -21,11 +21,12 @@
     "test": "vitest",
     "build": "tsc && vite build",
     "coverage": "vitest run --coverage",
-    "publish:pre": "pnpm build && pnpm coverage"
+    "publish:pre": "pnpm oxlint --fix && pnpm build && pnpm coverage"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^1.1.0",
     "jsdom": "^22.1.0",
+    "oxlint": "^0.0.22",
     "tslib": "^2.5.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.10",

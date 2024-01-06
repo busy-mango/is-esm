@@ -5,8 +5,17 @@ export type PlainObject = {
 }
 
 export function isPlainObject(source: unknown): source is PlainObject {
+  if (!isObject(source)) return false;
+  if (toString.call(source) !== '[object Object]') return false;
+
   const { getPrototypeOf } = Object;
-  return isObject(source) && getPrototypeOf({}) === getPrototypeOf(source);
+  if (getPrototypeOf(source) === null) return true;
+
+  const closure = { prototype: source };
+  while (getPrototypeOf(closure.prototype) !== null) {
+    closure.prototype = getPrototypeOf(closure.prototype);
+  }
+  return getPrototypeOf(source) === closure.prototype;
 }
 
 /**

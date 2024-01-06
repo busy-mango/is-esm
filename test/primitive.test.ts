@@ -11,6 +11,7 @@ import {
   isFalse,
   isBoolean,
   isBigInt,
+  isSymbol,
 } from '../index';
 
 describe('isUndefined', () => {
@@ -175,5 +176,24 @@ describe('isBigInt', () => {
     expect(isBigInt(123)).toBe(false);
     expect(isBigInt(0)).toBe(false);
     expect(isBigInt('123')).toBe(false);
+  });
+});
+
+describe('isSymbol', () => {
+  const symbol = Symbol('Symbol');
+  it('should return `true` for symbols', () => {
+    expect(isSymbol(symbol)).toBe(true);
+  });
+
+  it('should return `false` for non-symbols', () => {
+    expect(isSymbol(Object(symbol))).toBe(false);
+    expect(isSymbol([1, 2, 3])).toBe(false);
+    expect(isSymbol(true)).toBe(false);
+    expect(isSymbol(new Date())).toBe(false);
+    expect(isSymbol(new Error())).toBe(false);
+    expect(isSymbol({ 0: 1, length: 1 })).toBe(false);
+    expect(isSymbol(1)).toBe(false);
+    expect(isSymbol(/x/)).toBe(false);
+    expect(isSymbol('a')).toBe(false);
   });
 });

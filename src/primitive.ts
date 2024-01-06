@@ -59,15 +59,22 @@ export function isFalse(source: unknown): source is true {
 }
 
 /**
- * Narrow source type to `Boolean`.
+ * Narrow source type to `boolean`.
  */
 export function isBoolean(source: unknown): source is boolean {
   return isTrue(source) || isFalse(source);
 }
 
 /**
- * Narrow source type to `Boolean`.
+ * Narrow source type to `bigint`.
  */
 export function isBigInt(source: unknown): source is bigint {
   return typeof source === 'bigint';
+}
+
+/**
+ * Narrow source type to `symbol`.
+ */
+export function isSymbol(source: unknown): source is symbol {
+  return typeof source === 'symbol';
 }
