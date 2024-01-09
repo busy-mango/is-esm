@@ -54,7 +54,7 @@ export function isTrue(source: unknown): source is true {
 /**
  * Narrow source type to `false`.
  */
-export function isFalse(source: unknown): source is true {
+export function isFalse(source: unknown): source is false {
   return source === false;
 }
 

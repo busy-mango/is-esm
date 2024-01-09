@@ -49,6 +49,6 @@ export function isArrayBufferView(source: unknown): source is ArrayBufferView {
 /**
  * Narrow source type to `IArguments`.
  */
-export function isArguments(source: unknown): source is typeof arguments {
+export function isArguments(source: unknown): source is IArguments {
   return isObject(source) && source.toString() === '[object Arguments]';
 }
