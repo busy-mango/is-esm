@@ -33,7 +33,7 @@ export function isNil(source: unknown): source is Nil {
  * Narrow source type to `String`.
  */
 export function isString(source: unknown): source is string {
-  return typeof source === 'string' || source instanceof String;
+  return typeof source === "string" || source instanceof String;
 }
 
 /**
@@ -41,7 +41,7 @@ export function isString(source: unknown): source is string {
  * @note Exclude `Infinity`, `-Infinity`, and `NaN`.
  */
 export function isNumber(source: unknown): source is number {
-  return typeof source === 'number' || source instanceof Number;
+  return typeof source === "number" || source instanceof Number;
 }
 
 /**
@@ -66,15 +66,29 @@ export function isBoolean(source: unknown): source is boolean {
 }
 
 /**
+ * Narrow source type to `number` and `source` is int.
+ */
+export function isInt(source: unknown): source is number {
+  return isNumber(source) && source % 1 === 0;
+}
+
+/**
+ * Narrow source type to `number` and `source` is float.
+ */
+export const isFloat = (source: unknown): source is number => {
+  return isNumber(source) && source % 1 !== 0;
+};
+
+/**
  * Narrow source type to `bigint`.
  */
 export function isBigInt(source: unknown): source is bigint {
-  return typeof source === 'bigint';
+  return typeof source === "bigint";
 }
 
 /**
  * Narrow source type to `symbol`.
  */
 export function isSymbol(source: unknown): source is symbol {
-  return typeof source === 'symbol';
+  return typeof source === "symbol";
 }

@@ -1,0 +1,16 @@
+es/
+lib/
+docs/
+demo/
+dist/
+test/
+tests/
+build/
+vendors/
+coverage/
+node_modules/
+
+src/**/*.js
+src/**/*.d.ts
+vite.config.ts
+index.d.ts

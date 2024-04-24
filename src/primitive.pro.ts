@@ -1,10 +1,19 @@
 import { isNumber, isString } from "./primitive";
 
 /**
+ * Narrow source type to `String` && Check is empty string.
+ */
+export function isEmptyString(source: unknown): source is "" {
+  return isString(source) && source.trim() === "";
+}
+
+/**
  * Narrow source type to `String` && Check is not empty string.
  */
-export function isNonEmptyString(source: unknown): source is Exclude<string, ''> {
-  return isString(source) && source.trim() !== '';
+export function isNonEmptyString(
+  source: unknown,
+): source is Exclude<string, ""> {
+  return isString(source) && source.trim() !== "";
 }
 
 /**
@@ -24,7 +33,7 @@ export function isFinite(source: unknown): source is number {
 /**
  * Narrow source type to `Number` && Check is integer.
  */
-export function isInteger(source: unknown): source is number{
+export function isInteger(source: unknown): source is number {
   return Number.isInteger(source);
 }
 

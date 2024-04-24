@@ -97,6 +97,8 @@ export function isUint8Array(source: unknown): source is Uint8Array {
  * @param {unknown} source - The value to be checked.
  * @returns {boolean} Returns true if the source is an instance of WeakSet, false otherwise.
  */
-export function isWeakSet<T extends WeakKey>(source: unknown): source is WeakSet<T> {
+export function isWeakSet<T extends WeakKey>(
+  source: unknown,
+): source is WeakSet<T> {
   return source instanceof WeakSet;
 }

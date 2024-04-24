@@ -19,9 +19,9 @@ export interface NarrowFunc<T> {
 export function isValidKey<K extends string, T>(
   key: K,
   source: object,
-  is: NarrowFunc<T>
+  is: NarrowFunc<T>,
 ): source is Record<K, T> {
-  return (key in source) && is((source as Record<K, T>)[key]);
+  return key in source && is((source as Record<K, T>)[key]);
 }
 
 /**
@@ -29,26 +29,28 @@ export function isValidKey<K extends string, T>(
  */
 export function isArrayBufferLike(source: unknown): source is ArrayBufferLike {
   return (
-    isArrayBuffer(source)
-    || isUint8Array(source)
-    || isObject(source) && isValidKey('ArrayBuffer', source, isArrayBuffer)
+    isArrayBuffer(source) ||
+    isUint8Array(source) ||
+    (isObject(source) && isValidKey("ArrayBuffer", source, isArrayBuffer))
   );
-};
+}
 
 /**
  * Narrow source type to `ArrayBufferView`.
  */
 export function isArrayBufferView(source: unknown): source is ArrayBufferView {
-  return isObject(source)
-    && isValidKey('byteLength', source, isFinite)
-    && isValidKey('byteOffset', source, isFinite)
-    && isValidKey('buffer', source, isArrayBufferLike)
-  ;
+  return (
+    isObject(source) &&
+    isValidKey("byteLength", source, isFinite) &&
+    isValidKey("byteOffset", source, isFinite) &&
+    isValidKey("buffer", source, isArrayBufferLike)
+  );
 }
 
 /**
  * Narrow source type to `IArguments`.
  */
 export function isArguments(source: unknown): source is IArguments {
-  return isObject(source) && source.toString() === '[object Arguments]';
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  return isObject(source) && source.toString() === "[object Arguments]";
 }

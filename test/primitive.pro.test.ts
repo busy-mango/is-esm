@@ -5,8 +5,29 @@ import {
   isFinite,
   isInteger,
   isSafeInteger,
+  isEmptyString,
   isNonEmptyString,
 } from '../index';
+
+describe('isEmptyString', () => {
+  it('should return true if source is an empty string', () => {
+    expect(isEmptyString('  ')).toBe(true);
+    expect(isEmptyString('')).toBe(true);
+  });
+
+  it('should return false if source is a non-empty string', () => {
+    expect(isEmptyString('hello')).toBe(false);
+    expect(isEmptyString('123')).toBe(false);
+  });
+
+  it('should return false if source is not a string', () => {
+    expect(isEmptyString(undefined)).toBe(false);
+    expect(isEmptyString(null)).toBe(false);
+    expect(isEmptyString(123)).toBe(false);
+    expect(isEmptyString(true)).toBe(false);
+    expect(isEmptyString({})).toBe(false);
+  });
+});
 
 describe('isNonEmptyString', () => {
   it('should return true if source is a non-empty string', () => {

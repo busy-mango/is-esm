@@ -6,9 +6,31 @@ import { describe, expect, it } from "vitest";
 
 import {
   isPlainObject,
+  isEmptyObject,
   isEmptyArray,
   isNonEmptyArray,
+  isStringArray,
+  isEmpty,
 } from '../index';
+
+describe('isEmptyObject', () => {
+  it('should return true for an empty object', () => {
+    expect(isEmptyObject({})).toBe(true);
+  });
+
+  it('should return false for a non-empty object', () => {
+    expect(isEmptyObject({ key: 'value' })).toBe(false);
+    expect(isEmptyObject({ foo: undefined })).toBe(false);
+  });
+
+  it('should return false for non-object values', () => {
+    expect(isEmptyObject(null)).toBe(false);
+    expect(isEmptyObject(undefined)).toBe(false);
+    expect(isEmptyObject('')).toBe(false);
+    expect(isEmptyObject([])).toBe(false);
+    expect(isEmptyObject(123)).toBe(false);
+  });
+});
 
 describe('isPlainObject', () => {
   const element = document && document.createElement('div');
@@ -131,5 +153,62 @@ describe('isNonEmptyArray', () => {
     expect(isNonEmptyArray(123)).toBe(false);
     expect(isNonEmptyArray('array')).toBe(false);
     expect(isNonEmptyArray({})).toBe(false);
+  });
+});
+
+describe('isStringArray', () => {
+  it('should return true for an array of strings', () => {
+    expect(isStringArray(['a', 'b', 'c'])).toBe(true);
+    expect(isStringArray(new Array('x', 'y', 'z'))).toBe(true); // 使用构造函数创建的字符串数组
+  });
+
+  it('should return false for an empty array', () => {
+    expect(isStringArray([])).toBe(false);
+    expect(isStringArray(new Array())).toBe(false); // 使用构造函数创建的空数组
+  });
+
+  it('should return false for an array containing non-string values', () => {
+    expect(isStringArray(['a', 123, 'c'])).toBe(false); // 包含非字符串值
+    expect(isStringArray([null, undefined, 'c'])).toBe(false); // 包含 null 和 undefined
+    expect(isStringArray([{}, {}, {}])).toBe(false); // 包含对象
+  });
+
+  it('should return false for non-array values', () => {
+    expect(isStringArray(null)).toBe(false);
+    expect(isStringArray(undefined)).toBe(false);
+    expect(isStringArray('')).toBe(false);
+    expect(isStringArray({})).toBe(false);
+    expect(isStringArray(123)).toBe(false);
+  });
+});
+
+describe('isEmpty', () => {
+  it('should return true for empty array', () => {
+    expect(isEmpty([])).toBe(true);
+    expect(isEmpty(new Array())).toBe(true); // 使用构造函数创建的空数组
+  });
+
+  it('should return true for empty object', () => {
+    expect(isEmpty({})).toBe(true);
+  });
+
+  it('should return true for empty string', () => {
+    expect(isEmpty('')).toBe(true);
+  });
+
+  it('should return true for null or undefined', () => {
+    expect(isEmpty(null)).toBe(true);
+    expect(isEmpty(undefined)).toBe(true);
+  });
+
+  it('should return true for NaN', () => {
+    expect(isEmpty(NaN)).toBe(true);
+  });
+
+  it('should return false for non-empty values', () => {
+    expect(isEmpty([1, 2, 3])).toBe(false); // 非空数组
+    expect(isEmpty({ key: 'value' })).toBe(false); // 非空对象
+    expect(isEmpty('hello')).toBe(false); // 非空字符串
+    expect(isEmpty(123)).toBe(false); // 非空数值
   });
 });

@@ -11,7 +11,7 @@ export function isCSSStyleRule(source: unknown): source is CSSStyleRule {
  * @param {unknown} source - The value to be checked.
  * @returns {boolean} Returns true if the source is an instance of CSSStyleSheet, false otherwise.
  */
-export function isCSSStyleSheet (source: unknown): source is CSSStyleSheet {
+export function isCSSStyleSheet(source: unknown): source is CSSStyleSheet {
   return source instanceof CSSStyleSheet;
 }
 

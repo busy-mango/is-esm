@@ -12,6 +12,8 @@ import {
   isBoolean,
   isBigInt,
   isSymbol,
+  isInt,
+  isFloat,
 } from '../index';
 
 describe('isUndefined', () => {
@@ -195,5 +197,44 @@ describe('isSymbol', () => {
     expect(isSymbol(1)).toBe(false);
     expect(isSymbol(/x/)).toBe(false);
     expect(isSymbol('a')).toBe(false);
+  });
+});
+
+describe('isInt', () => {
+  it('should return true for integer numbers', () => {
+    expect(isInt(5)).toBe(true);
+    expect(isInt(-10)).toBe(true);
+    expect(isInt(0)).toBe(true);
+  });
+
+  it('should return false for non-integer numbers', () => {
+    expect(isInt(5.5)).toBe(false);
+    expect(isInt(-10.2)).toBe(false);
+    expect(isInt('5')).toBe(false);
+    expect(isInt(null)).toBe(false);
+    expect(isInt(undefined)).toBe(false);
+    expect(isInt({})).toBe(false);
+    expect(isInt([])).toBe(false);
+  });
+});
+
+describe('isFloat', () => {
+  it('should return true for float numbers', () => {
+    expect(isFloat(5.5)).toBe(true);
+    expect(isFloat(-10.2)).toBe(true);
+  });
+
+  it('should return false for integer numbers', () => {
+    expect(isFloat(5)).toBe(false);
+    expect(isFloat(-10)).toBe(false);
+    expect(isFloat(0)).toBe(false);
+  });
+
+  it('should return false for non-number values', () => {
+    expect(isFloat('5')).toBe(false);
+    expect(isFloat(null)).toBe(false);
+    expect(isFloat(undefined)).toBe(false);
+    expect(isFloat({})).toBe(false);
+    expect(isFloat([])).toBe(false);
   });
 });
