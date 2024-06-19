@@ -5,6 +5,7 @@ import {
   isArguments,
   isArrayBufferLike,
   isArrayBufferView,
+  isBufferSource,
 } from '../index';
 
 describe('isValidKey', () => {
@@ -63,6 +64,46 @@ describe('isArrayBufferView', () => {
     expect(isArrayBufferView({})).toBe(false);
     expect(isArrayBufferView('arraybufferview')).toBe(false);
     expect(isArrayBufferView(123)).toBe(false);
+  });
+});
+
+describe('isBufferSource function', () => {
+  it('should return true for Uint8Array', () => {
+    expect(isBufferSource(new Uint8Array([65, 66, 67]))).toBe(true);
+    expect(isBufferSource(new Uint16Array([65, 66, 67]))).toBe(true);
+    expect(isBufferSource(new Uint32Array([65, 66, 67]))).toBe(true);
+  });
+
+  it('should return true for ArrayBuffer', () => {
+    const buffer = new ArrayBuffer(8);
+    expect(isBufferSource(buffer)).toBe(true);
+  });
+
+  it('should return true for TypedArray', () => {
+    expect(isBufferSource(new Float32Array([1, 2, 3, 4]))).toBe(true);
+    expect(isBufferSource(new Float64Array([1, 2, 3, 4]))).toBe(true);
+  });
+
+  it('should return true for TypedArray', () => {
+    expect(isBufferSource(new Int8Array([1, 2, 3, 4]))).toBe(true);
+    expect(isBufferSource(new Int16Array([1, 2, 3, 4]))).toBe(true);
+    expect(isBufferSource(new Int32Array([1, 2, 3, 4]))).toBe(true);
+  });
+
+  it('should return true for DataView', () => {
+    const buffer = new DataView(new ArrayBuffer(16));
+    expect(isBufferSource(buffer)).toBe(true);
+  });
+
+  it('should return false for non-BufferSource types', () => {
+    expect(isBufferSource(null)).toBe(false);
+    expect(isBufferSource(undefined)).toBe(false);
+    expect(isBufferSource('string')).toBe(false);
+    expect(isBufferSource(123)).toBe(false);
+    expect(isBufferSource({})).toBe(false);
+    expect(isBufferSource([])).toBe(false);
+    expect(isBufferSource(new Map())).toBe(false);
+    expect(isBufferSource(new Set())).toBe(false);
   });
 });
 

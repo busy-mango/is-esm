@@ -48,6 +48,18 @@ export function isArrayBufferView(source: unknown): source is ArrayBufferView {
 }
 
 /**
+ * Narrow source type to `BufferSource`.
+ */
+export function isBufferSource(source: unknown): source is BufferSource {
+  return (
+    ArrayBuffer.isView(source) ||
+    isArrayBufferLike(source) ||
+    isArrayBufferView(source) ||
+    isArrayBuffer(source)
+  );
+}
+
+/**
  * Narrow source type to `IArguments`.
  */
 export function isArguments(source: unknown): source is IArguments {
