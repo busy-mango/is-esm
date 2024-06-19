@@ -102,3 +102,23 @@ export function isWeakSet<T extends WeakKey>(
 ): source is WeakSet<T> {
   return source instanceof WeakSet;
 }
+
+/**
+ * Checks if the provided source is an instance of FormData.
+ *
+ * @param source The value to check.
+ * @returns Returns true if source is an instance of FormData, false otherwise.
+ */
+export function isFormData(source: unknown): source is FormData {
+  return source instanceof FormData;
+}
+
+/**
+ * Checks if the provided source is an instance of ReadableStream.
+ *
+ * @param source The value to check.
+ * @returns Returns true if source is an instance of ReadableStream, false otherwise.
+ */
+export function isReadableStream(source: unknown): source is ReadableStream {
+  return source instanceof ReadableStream;
+}

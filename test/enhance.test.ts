@@ -15,6 +15,8 @@ import {
   isError,
   isRegExp,
   isWeakSet,
+  isFormData,
+  isReadableStream,
 } from '../index';
 
 describe('isPromise', () => {
@@ -176,5 +178,41 @@ describe('isError', () => {
     expect(isError('error')).toBe(false);
     expect(isError({})).toBe(false);
     expect(isError([])).toBe(false);
+  });
+});
+
+describe('isFormData function', () => {
+  it('should return true for FormData instance', () => {
+    const formData = new FormData();
+    expect(isFormData(formData)).toBe(true);
+  });
+
+  it('should return false for other types', () => {
+    expect(isFormData(null)).toBe(false);
+    expect(isFormData(undefined)).toBe(false);
+    expect(isFormData('string')).toBe(false);
+    expect(isFormData(123)).toBe(false);
+    expect(isFormData({})).toBe(false);
+    expect(isFormData([])).toBe(false);
+    expect(isFormData(new Map())).toBe(false);
+    expect(isFormData(new Set())).toBe(false);
+  });
+})
+
+describe('isReadableStream function', () => {
+  it('should return true for ReadableStream instance', () => {
+    const readableStream = new ReadableStream();
+    expect(isReadableStream(readableStream)).toBe(true);
+  });
+
+  it('should return false for other types', () => {
+    expect(isReadableStream(null)).toBe(false);
+    expect(isReadableStream(undefined)).toBe(false);
+    expect(isReadableStream('string')).toBe(false);
+    expect(isReadableStream(123)).toBe(false);
+    expect(isReadableStream({})).toBe(false);
+    expect(isReadableStream([])).toBe(false);
+    expect(isReadableStream(new Map())).toBe(false);
+    expect(isReadableStream(new Set())).toBe(false);
   });
 });
